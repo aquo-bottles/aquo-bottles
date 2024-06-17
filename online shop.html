@@ -67,6 +67,7 @@
             justify-content: center;
             padding: 20px;
             background: #000; /* Products container background color */
+            flex: 1; /* Allow products section to grow */
         }
         .product {
             flex: 0 0 45%;
@@ -76,10 +77,17 @@
             border: 1px solid #444; /* Border color */
             text-align: center;
             background: #111; /* Product background color */
+            height: 400px; /* Fixed height for product boxes */
+            overflow: hidden;
+            transition: height 0.3s ease; /* Smooth transition for height change */
+        }
+        .product:hover {
+            height: 600px; /* Expanded height on hover */
+            overflow: visible; /* Make sure content is visible */
         }
         .product img {
             max-width: 100%;
-            height: auto;
+            height: 320px;
         }
         .product h2 {
             font-size: 1.5em;
@@ -135,7 +143,9 @@
         <div class="product">
             <img src="beach.jpg" alt="Bottle 2">
             <h2>Sunset Beach</h2>
-            <p>Description for product 2</p>
+            <p>Bei einem gemütlichen Nachmittag am See oder in den Ferien am Meer eignet sich die Flache Sunset Beach perfekt. Mit dem 
+                wasserdichten Strohhalm lässt sich die Flasche ohne sorgen in die Tasche versorgen. 
+            </p>
         </div>
         <div class="product">
             <img src="sun.jpg" alt="Bottle 3">
