@@ -26,7 +26,7 @@ body, html {
     font-size: 2em;
     color: white; /* Header text color */
     text-align: center;
-    margin-right: 25%;
+    margin-right: 20%;
 }
 .header-bar nav a {
     color: #fff;
@@ -69,7 +69,7 @@ body, html {
     border: 1px solid #444; /* Border color */
     text-align: center;
     background: #111; /* Product background color */
-    height: 400px; /* Fixed height for product boxes */
+    height: 430px; /* Fixed height for product boxes */
     overflow: hidden;
     transition: height 0.3s ease; /* Smooth transition for height change */
 }
@@ -80,10 +80,12 @@ body, html {
 .product img {
     max-width: 100%;
     height: 320px;
+    border-radius: 10px; /* Add border radius for rounded corners */
 }
 .product h2 {
     font-size: 1.5em;
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 2px;
     color: #fff; /* Product title color */
 }
 .product p {
@@ -105,3 +107,17 @@ footer {
     color: #ccc;
     margin-top: 8%;
 }
+.logo img {
+    height: 60px; /* Increase the height of the logo */
+    margin-right: 10px; /* Space between logo and text */
+    padding-right: 15px;
+}
+h4 {
+    font-size: 1.25em; /* Adjust the font size */
+    color: white; /* Change the text color */
+    font-weight: normal; /* Make the text bold */
+    margin: 4px 0; /* Adjust the margins */
+    text-align: center; /* Center align the text */
+    padding-bottom: 10px; /* Add padding at the bottom */
+}
+
