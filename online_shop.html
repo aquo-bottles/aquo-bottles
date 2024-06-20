@@ -35,18 +35,26 @@
 
     <div class="products">
         <div class="product">
-            <img src="urbancity.png" alt="Bottle 1">
+            <img src="urbancity.png" alt="Bottle 1" class="product-image">
+            <div class="arrow-buttons">
+                <button class="arrow-button left">&larr;</button>
+                <button class="arrow-button right">&rarr;</button>
+            </div>
             <h2>Urban City</h2>
             <h4>59.99 Fr.</h4>
             <p>Urban City ist das perfekte Model für den normalen Alltag. Diese Flasche hat einen gut verschliessbaren Deckel mit einem 
                 angenehmen Trinkaufsatz. Da die Deckel leicht entfernbar sind, kann die Flasche auch ohne Problem gereinigt werden und 
                 dank einer biologischen antibakteriellen beschichtung findet auch keine geruchsentwicklung statt. Mit dieser Flasche besteht 
                 die Möglichkeit bei Händler ein Getränk billiger in die Flasche aufzufüllen. Die Liste von Händler, die dies anbieten kann auf 
-                unserer Webseite aufgerufen werden. 
+                unserer Webseite aufgerufen werden.
             </p>
         </div>
         <div class="product">
-            <img src="beach.jpg" alt="Bottle 2">
+            <img src="beach.jpg" alt="Bottle 2" class="product-image">
+            <div class="arrow-buttons">
+                <button class="arrow-button left">&larr;</button>
+                <button class="arrow-button right">&rarr;</button>
+            </div>
             <h2>Sunset Beach</h2>
             <h4>59.99 Fr.</h4>
             <p>Für einen gemütlichen Nachmittag am See oder in den Ferien am Meer eignet sich die nachhaltige Flasche Sunset Beach perfekt. Mit dem 
@@ -56,13 +64,21 @@
             </p>
         </div>
         <div class="product">
-            <img src="sun.jpg" alt="Bottle 3">
+            <img src="sun.jpg" alt="Bottle 3" class="product-image">
+            <div class="arrow-buttons">
+                <button class="arrow-button left">&larr;</button>
+                <button class="arrow-button right">&rarr;</button>
+            </div>
             <h2>Cozy Morning</h2>
             <h4>59.99 Fr.</h4>
             <p>Description for product 3</p>
         </div>
         <div class="product">
-            <img src="wald.jpg" alt="Bottle 4">
+            <img src="wald.jpg" alt="Bottle 4" class="product-image">
+            <div class="arrow-buttons">
+                <button class="arrow-button left">&larr;</button>
+                <button class="arrow-button right">&rarr;</button>
+            </div>
             <h2>Product 4</h2>
             <h4>59.99 Fr.</h4>
             <p>Description for product 4</p>
@@ -77,5 +93,43 @@
         <p>Email: beispiel</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = document.querySelectorAll('.product');
+
+            const imageSets = [
+                ['urbancity.png', 'name.png', 'city.jpg'], // Images for the first product
+                ['beach.jpg', 'city.jpg', 'beach.jpg'], // Images for the second product
+                ['sun.jpg', 'sun.jpg', 'sun.jpg'], // Images for the third product
+                ['wald.jpg', 'wald.jpg', 'wald.jpg']  // Images for the fourth product
+            ];
+
+            products.forEach((product, index) => {
+                const images = imageSets[index];
+                let currentIndex = 0;
+                const imgElement = product.querySelector('.product-image');
+                const leftButton = product.querySelector('.arrow-button.left');
+                const rightButton = product.querySelector('.arrow-button.right');
+
+                leftButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                    imgElement.style.opacity = '0';
+                    setTimeout(() => {
+                        imgElement.src = images[currentIndex];
+                        imgElement.style.opacity = '1';
+                    }, 500);
+                });
+
+                rightButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                    imgElement.style.opacity = '0';
+                    setTimeout(() => {
+                        imgElement.src = images[currentIndex];
+                        imgElement.style.opacity = '1';
+                    }, 500);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

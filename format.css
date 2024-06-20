@@ -78,12 +78,12 @@ body, html {
     border-radius: 10px; /* Add border radius for rounded corners */
     text-align: center;
     background: #111; /* Product background color */
-    height: 425px; /* Fixed height for product boxes */
+    height: 475px; /* Fixed height for product boxes */
     overflow: hidden;
     transition: height 0.3s ease; /* Smooth transition for height change */
 }
 .product:hover {
-    height: 650px; /* Expanded height on hover */
+    height: 700px; /* Expanded height on hover */
     overflow: visible; /* Make sure content is visible */
 }
 .product img {
@@ -109,6 +109,26 @@ body, html {
     margin: 4px 0; /* Adjust the margins */
     text-align: center; /* Center align the text */
     padding-bottom: 10px; /* Add padding at the bottom */
+}
+.arrow-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.arrow-button {
+    background-color: #949ca8;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.arrow-button:hover {
+    background-color: #727882;
 }
 .intro-text {
     padding: 10px;
